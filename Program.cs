@@ -46,7 +46,7 @@ static async Task<string> GetApiData(string apiUrl)
 {
     int retryCount = 0;
     const int maxRetries = 10;  // AA: Retries count
-    TimeSpan delay = TimeSpan.FromSeconds(5); //AA: Initial cooldown time
+    TimeSpan delay = TimeSpan.FromSeconds(5); //AA: Initial cooldown time set for 5 seconds
 
     while (retryCount < maxRetries)
     {
@@ -103,7 +103,7 @@ static void ProcessApiData(string responseData, List<Tuple<string, int>> tickerC
     }
     catch (Exception ex)
     {
-        Console.WriteLine($"Error processing data for apiUrlBase: {ex.Message}");
+        Console.WriteLine($"Error processing data for {apiUrlBase}: {ex.Message}");
     }
 }
 
